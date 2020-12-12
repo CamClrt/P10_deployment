@@ -1,9 +1,7 @@
-PurBeurre
+Deploy a Django project
 =================
 
 This is a student project made for the project 8 from [OpenClassrooms](https://openclassrooms.com/)'s Python course.
-
-This project aims to help the Pur Beurre compagny's customer to eat healthier thanks to the Open Food facts data.
 
 ## Made with
 
@@ -16,12 +14,12 @@ This project aims to help the Pur Beurre compagny's customer to eat healthier th
 
 ## Deployment
 
-* Heroku: [purbeurre-camclrt.herokuapp.com](http://purbeurre-camclrt.herokuapp.com/)
+* TBD
 
 ## Versions
 
-Created in:   November 2020  
-Developed:    October/November 2020
+Created in:   December 2020  
+Developed:    December 2020  
 Last version: https://github.com/CamClrt
 
 ## Authors
