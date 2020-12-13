@@ -12,16 +12,14 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 import os
 
-import dj_database_url
 import sentry_sdk
 
 
-# settings for "development" or "production"
-ENV = os.environ.get("ENV")
-
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+# BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = os.path.dirname(
+    os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+)  # noqa: E501
 
 
 # Quick-start development settings - unsuitable for production
@@ -30,20 +28,14 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
-if ENV == "development":
-    DEBUG = True
+# SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = True
 
-    ALLOWED_HOSTS = [
-        "localhost",
-        "127.0.0.1",
-        "testserver",
-    ]
-else:
-    DEBUG = False
-
-    ALLOWED_HOSTS = [
-        "purbeurre-camclrt.herokuapp.com",
-    ]
+ALLOWED_HOSTS = [
+    "localhost",
+    "127.0.0.1",
+    "testserver",
+]
 
 # Application definition
 
@@ -68,9 +60,6 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
-
-if ENV == "production":
-    MIDDLEWARE.append("whitenoise.middleware.WhiteNoiseMiddleware")
 
 ROOT_URLCONF = "pur_beurre.urls"
 
@@ -97,25 +86,17 @@ WSGI_APPLICATION = "pur_beurre.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-DATABASES = {}
 
-if os.getenv("DATABASE_URL"):
-    DATABASE_URL = os.getenv("DATABASE_URL")
-    DATABASES["default"] = dj_database_url.config(
-        conn_max_age=600,
-        ssl_require=True,
-    )
-else:
-    DATABASES = {
-        "default": {
-            "ENGINE": "django.db.backends.postgresql",
-            "NAME": os.environ.get("NAME"),
-            "USER": os.environ.get("USER"),
-            "PASSWORD": os.environ.get("PASSWORD"),
-            "HOST": os.environ.get("HOST"),
-            "PORT": os.environ.get("PORT"),
-        }
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": os.environ.get("NAME"),
+        "USER": os.environ.get("USER"),
+        "PASSWORD": os.environ.get("PASSWORD"),
+        "HOST": os.environ.get("HOST"),
+        "PORT": os.environ.get("PORT"),
     }
+}
 
 
 # Password validation
@@ -167,8 +148,6 @@ LOGIN_REDIRECT_URL = "/"
 LOGIN_URL = "login"
 
 AUTH_USER_MODEL = "users.User"
-
-STATICFILES_STORAGE = "whitenoise.storage.CompressedStaticFilesStorage"
 
 sentry_sdk.init(
     "https://cab13138d79d45169402f73603268e76@o484599.ingest.sentry.io/5538027",  # noqa: E501

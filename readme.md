@@ -14,7 +14,7 @@ This is a student project made for the project 8 from [OpenClassrooms](https://o
 
 ## Deployment
 
-* TBD
+* (link here)[http://134.122.104.210/]
 
 ## Versions
 
