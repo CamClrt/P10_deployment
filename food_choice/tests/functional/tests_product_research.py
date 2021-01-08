@@ -1,5 +1,11 @@
 from django.contrib.staticfiles.testing import StaticLiveServerTestCase
 from selenium.webdriver.firefox.webdriver import WebDriver
+from selenium import webdriver
+
+
+firefox_options = webdriver.FirefoxOptions()
+firefox_options.headless = True
+firefox_options.add_argument("--window-size=1920x1080")
 
 
 class ProductResearchTest(StaticLiveServerTestCase):
