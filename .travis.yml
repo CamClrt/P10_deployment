@@ -11,11 +11,7 @@ branches:
   only:
     - staging
 
-install:
-  - pip install tchappui-webdrivers
-
 before_script:
-  # - install-webdrivers --path /usr/local/bin/
   - pip install -r requirements.txt
 
 env: DJANGO_SETTINGS_MODULE="pur_beurre.settings.travis"
