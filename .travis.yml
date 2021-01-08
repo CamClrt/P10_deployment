@@ -2,6 +2,10 @@ language: python
 python:
   - "3.8"
 
+#addons
+addons:
+  firefox: latest
+
 # safelist
 branches:
   only:
