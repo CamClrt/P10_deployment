@@ -1,20 +1,24 @@
 language: python
+
 python:
   - "3.8"
 
-#addons
 addons:
   firefox: latest
 
-# safelist
 branches:
   only:
     - staging
 
-before_script:
+install:
   - pip install -r requirements.txt
 
-env: DJANGO_SETTINGS_MODULE="pur_beurre.settings.travis"
+before_script:
+  - install-webdrivers --path webdrivers
+
+env:
+  global:
+    - DJANGO_SETTINGS_MODULE="pur_beurre.settings.travis"
 
 services:
   - postgresql

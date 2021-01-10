@@ -28,6 +28,7 @@ selenium==3.141.0
 sentry-sdk==0.19.4
 six==1.15.0
 sqlparse==0.4.1
+tchappui-webdrivers==0.3.7
 tldextract==3.1.0
 toml==0.10.2
 typed-ast==1.4.1
