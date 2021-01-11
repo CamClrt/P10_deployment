@@ -1,6 +1,5 @@
 env
 .env
-production.py
 __pycache__
 staticfiles
 geckodriver.log
