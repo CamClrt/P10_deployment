@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 import os
 
 import sentry_sdk
+from sentry_sdk.integrations.django import DjangoIntegration
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -150,6 +151,7 @@ LOGIN_URL = "login"
 AUTH_USER_MODEL = "users.User"
 
 sentry_sdk.init(
-    "https://cab13138d79d45169402f73603268e76@o484599.ingest.sentry.io/5538027",  # noqa: E501
+    dsn="https://0ec3defb03bf48b39307777c7a4e3347@o484599.ingest.sentry.io/5588174",  # noqa: E501
+    integrations=[DjangoIntegration()],
     traces_sample_rate=1.0,
 )
