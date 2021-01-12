@@ -69,7 +69,7 @@ def products(request):
             "New search",
             exc_info=True,
             extra={
-                "request": request,
+                "request": user_research,
             },
         )
 
