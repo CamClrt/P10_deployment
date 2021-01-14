@@ -1,8 +1,8 @@
 from unittest.mock import patch
 
 from django.test import TestCase
-from food_choice.api import API
 
+from food_choice.api import API
 
 categories_res = {
     "tags": [

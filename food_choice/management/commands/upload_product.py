@@ -2,10 +2,10 @@
 
 from django.core.management.base import BaseCommand
 from django.db import IntegrityError
-from food_choice.api import API
-from food_choice.models import Category
-from food_choice.models import Product
 from progress.bar import Bar
+
+from food_choice.api import API
+from food_choice.models import Category, Product
 
 
 class Command(BaseCommand):
