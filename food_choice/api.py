@@ -29,9 +29,7 @@ class API:
             "user-agent": "PurBeurre/0.0.1",
         }
 
-        response = requests.get(
-            self.categories_url, headers=headers, timeout=10
-        )
+        response = requests.get(self.categories_url, headers=headers, timeout=10)
 
         category_list = None
 

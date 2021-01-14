@@ -28,16 +28,12 @@ class Command(BaseCommand):
             for imported_product in imported_products:
 
                 # filter & insert products
-                name = imported_product.get("product_name_fr", "")[
-                    :150
-                ].strip()
+                name = imported_product.get("product_name_fr", "")[:150].strip()
                 brand = imported_product.get("brands", "")[:100].strip()
                 url = imported_product.get("url", "").strip()
                 image_url = imported_product.get("image_url", "").strip()
                 code = imported_product.get("code", "")[:13].strip()
-                nutrition_grade = imported_product.get("nutrition_grades", "")[
-                    :1
-                ]
+                nutrition_grade = imported_product.get("nutrition_grades", "")[:1]
 
                 nutriments_list = [
                     "energy_100g",
@@ -84,9 +80,7 @@ class Command(BaseCommand):
                     product_obj.save()
 
                     # filter & insert categories
-                    tmp_categories = imported_product.get(
-                        "categories", ""
-                    ).split(",")
+                    tmp_categories = imported_product.get("categories", "").split(",")
                     for tmp_category in tmp_categories:
                         if tmp_category is not None:
                             category_name = tmp_category[:50].strip()
@@ -94,9 +88,7 @@ class Command(BaseCommand):
                             try:
                                 category_obj.save()
                             except IntegrityError:
-                                category_obj = Category.objects.get(
-                                    name=category_name
-                                )
+                                category_obj = Category.objects.get(name=category_name)
 
                             # associate product & category
                             product_obj.categories.add(category_obj)
