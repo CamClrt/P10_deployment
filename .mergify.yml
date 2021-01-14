@@ -1,0 +1,24 @@
+pull_request_rules:
+  - name: Automatic merge by CamClrt
+    conditions:
+      - base=main
+      - author=CamClrt
+      - "status-success=Travis CI - Branch"
+    actions:
+      merge:
+        strict: "smart"
+        method: rebase
+pull_request_rules:
+  - name: Automatic merge by a contributor
+    conditions:
+      - base=main
+      - author!=CamClrt
+      - approved-reviews-by>=CamClrt
+      - "status-success=Travis CI - Branch"
+    actions:
+      message: |
+          Welcome to my great project!
+          I'm delighted to have you onboard <3
+      merge:
+        strict: "smart"
+        method: rebase
