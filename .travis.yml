@@ -21,5 +21,6 @@ services:
 
 script:
   - ./manage.py test
+  - flake8 --ignore E501
   - black . --check
   - isort . --check
