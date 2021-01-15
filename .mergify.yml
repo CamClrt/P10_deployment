@@ -3,7 +3,17 @@ pull_request_rules:
     conditions:
       - base=main
       - author=CamClrt
-      - "status-success=Travis CI - Branch"
+      - check-success=Travis CI - Pull Request
+    actions:
+      merge:
+        strict: "smart"
+        method: rebase
+pull_request_rules:
+  - name: automatic merge by contributor
+    conditions:
+      - base=main
+      - "#approved-reviews-by>=1"
+      - check-success=Travis CI - Pull Request
     actions:
       merge:
         strict: "smart"
