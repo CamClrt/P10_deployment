@@ -6,8 +6,7 @@ pull_request_rules:
       - check-success=Travis CI - Pull Request
     actions:
       merge:
-        strict: "smart"
-        method: rebase
+        method: merge
 pull_request_rules:
   - name: automatic merge by contributor
     conditions:
@@ -16,5 +15,4 @@ pull_request_rules:
       - check-success=Travis CI - Pull Request
     actions:
       merge:
-        strict: "smart"
-        method: rebase
+        method: merge
