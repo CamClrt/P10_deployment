@@ -3,15 +3,16 @@ pull_request_rules:
     conditions:
       - base=main
       - "author=CamClrt"
+      - check-success=Travis CI - Branch
       - check-success=Travis CI - Pull Request
     actions:
       merge:
         method: merge
-pull_request_rules:
   - name: automatic merge for master by contributor when CI passes
     conditions:
       - base=main
       - "#approved-reviews-by>=1"
+      - check-success=Travis CI - Branch
       - check-success=Travis CI - Pull Request
     actions:
       merge:
