@@ -1,5 +1,5 @@
 pull_request_rules:
-  - name: Automatic merge by CamClrt
+  - name: automatic merge for master by CamClrt when CI passes
     conditions:
       - base=main
       - author=CamClrt
@@ -8,7 +8,7 @@ pull_request_rules:
       merge:
         method: merge
 pull_request_rules:
-  - name: automatic merge by contributor
+  - name: automatic merge for master by contributor when CI passes
     conditions:
       - base=main
       - "#approved-reviews-by>=1"
