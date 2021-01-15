@@ -1,0 +1,10 @@
+pull_request_rules:
+  - name: Automatic merge by CamClrt
+    conditions:
+      - base=main
+      - author=CamClrt
+      - "status-success=Travis CI - Branch"
+    actions:
+      merge:
+        strict: "smart"
+        method: rebase

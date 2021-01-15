@@ -1,7 +1,7 @@
 from django.contrib.staticfiles.testing import StaticLiveServerTestCase
-from pur_beurre.settings import BASE_DIR
 from selenium import webdriver
 
+from pur_beurre.settings import BASE_DIR
 
 firefox_options = webdriver.FirefoxOptions()
 firefox_options.headless = True
