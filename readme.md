@@ -14,12 +14,12 @@ This is a student project made for the project 8 from [OpenClassrooms](https://o
 
 ## Deployment
 
-* (link here)[http://134.122.104.210/]
+* [link here](https://projet-10.camille-clarret.com/)
 
 ## Versions
 
 Created in:   December 2020  
-Developed:    December 2020  
+Developed:    December 2020/January2021  
 Last version: https://github.com/CamClrt
 
 ## Authors
